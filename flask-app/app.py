@@ -13,5 +13,9 @@ def get_products():
     products = list(collection.find({}, {"_id": 0}))
     return jsonify(products)
 
+@app.route("/ping")
+def ping():
+    return "pong"
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
